@@ -94,7 +94,9 @@ int main()
     
     
     //11.13 The Course class
-    
+    //creates a course course1
+    Course course1("Data Structures", 10);
+    //adds three students
     return 0;
 }
 
@@ -139,4 +141,3 @@ int smallestElement(int* p, const int size)
     }
     return smallestElement;
 }
-

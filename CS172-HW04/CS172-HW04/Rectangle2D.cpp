@@ -62,7 +62,7 @@ const bool Rectangle2D::contains(double x2, double y2)
     if(x2<=(x+.5*width) && x2>=(x-.5*width))
     {
         if(y2<=(y+.5*height) && y2>=(y-.5*height))
-        containsP=true;
+            containsP=true;
     }
     return containsP;
 }
