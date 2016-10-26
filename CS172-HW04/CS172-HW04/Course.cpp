@@ -1,5 +1,6 @@
 #include "Course.hpp"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Course::Course(const string& courseName, int capacity)
@@ -22,13 +23,30 @@ string Course::getCourseName() const
 
 void Course::addStudent(const string& name)
 {
-    students[numberOfStudents] = name;
-    numberOfStudents++;
+    //if the number of students reaches capacity, the capacity is increased
+    if(numberOfStudents==capacity)
+        capacity++;
+    //otherwise, a student is added
+    else
+    {
+        students[numberOfStudents] = name;
+        numberOfStudents++;
+    }
 }
 
 void Course::dropStudent(const string& name)
 {
-    
+    int drop=0;
+    for(int i=0; i<numberOfStudents; i++)
+    {
+       if(students[i]==name)
+           drop = i;
+    }
+    for(int j=drop; j<numberOfStudents; j++)
+    {
+        students[j]=students[j+1];
+    }
+    numberOfStudents--;
 }
 
 string* Course::getStudents() const
@@ -39,4 +57,13 @@ string* Course::getStudents() const
 int Course::getNumberOfStudents() const
 {
     return numberOfStudents;
+}
+
+void Course::clear()
+{
+    for(int k=0; k<=numberOfStudents; k++)
+    {
+        students[k]=students[k-1];
+        numberOfStudents--;
+    }
 }

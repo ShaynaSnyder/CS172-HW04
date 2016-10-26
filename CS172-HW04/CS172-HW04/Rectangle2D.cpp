@@ -77,10 +77,10 @@ const bool Rectangle2D::contains(const Rectangle2D &r)
     y = getY();
     w = getWidth();
     h = getHeight();
-    x1 = ;
-    y1 = ;
-    w1 = ;
-    h1 = ;
+//    x1 = r.getX();
+//    y1 = r.getY();
+//    w1 = r.getWidth();
+//    h1 = r.getHeight();
     if(w1<=w && h1<=h)
     {
         if(abs(x1-x)<(w-w1) && abs(y1-y)<(h-h1))

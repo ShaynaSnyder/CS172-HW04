@@ -1,6 +1,5 @@
 #ifndef Rectangle2D_hpp
 #define Rectangle2D_hpp
-
 #include <stdio.h>
 #include <cstdbool>
 using namespace std;

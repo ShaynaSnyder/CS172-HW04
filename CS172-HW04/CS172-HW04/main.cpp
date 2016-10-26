@@ -9,9 +9,9 @@
 #include <cstdbool>
 #include <iomanip>
 #include <cmath>
+//includes header files
 #include "Rectangle2D.hpp"
 #include "Course.hpp"
-
 using namespace std;
 
 //declares int function that returns new array with list size doubled
@@ -93,12 +93,26 @@ int main()
     cout << "\nr1 overlaps r3: " << r1.overlaps(r3);
     
     
+    
     //11.13 The Course class
     //creates a course course1
     Course course1("Data Structures", 10);
     //adds three students
+    course1.addStudent("Cheree LaPierre");
+    course1.addStudent("Shayna Snyder");
+    course1.addStudent("Wynter Nelson");
+    //removes one student
+    course1.dropStudent("Wynter Nelson");
+    //displays students in course1
+    string* students = course1.getStudents();
+    cout << "\nNumber of students in course1: " << course1.getNumberOfStudents() << endl;
+    for(int i=0; i<course1.getNumberOfStudents(); i++)
+    cout << students[i] << endl;
     return 0;
 }
+
+
+
 
 //defines int function that returns new array with list size doubled
 int* doubleCapacity(const int* list, int size)
@@ -125,6 +139,7 @@ int* doubleCapacity(const int* list, int size)
         cout << pDouble[k] << setw(5);
     return pDouble;
 }
+
 
 //defines int function smallestInteger that finds the smallest element in an array of integers
 int smallestElement(int* p, const int size)

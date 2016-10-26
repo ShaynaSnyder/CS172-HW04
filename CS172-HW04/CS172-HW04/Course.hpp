@@ -11,7 +11,7 @@ class Course
 private:
     string courseName;
     string* students;
-    int numberOfStudents
+    int numberOfStudents;
     int capacity;
 public:
     Course(const string& courseName, int capacity);
@@ -19,6 +19,7 @@ public:
     string getCourseName() const;
     void addStudent(const string& name);
     void dropStudent(const string& name);
+    void clear();
     string* getStudents() const;
     int getNumberOfStudents() const;
 };
